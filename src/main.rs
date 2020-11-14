@@ -26,11 +26,11 @@ fn main() -> ! {
     // Configure pins for SPI
 
     let mut pins = arduino_uno::Pins::new(dp.PORTB, dp.PORTC, dp.PORTD);
-
+    pins.d10.into_output(&mut pins.ddr); // CS must be set to output mode.
     // Digital pin 13 is also connected to an onboard LED marked "L"
 
     let mut settings = Settings::default();
-    settings.clock = arduino_uno::spi::SerialClockRate::OscfOver2;
+    settings.clock = arduino_uno::spi::SerialClockRate::OscfOver4;
     let mut spi = Spi::new(
         dp.SPI,
         pins.d13.into_output(&mut pins.ddr),
@@ -42,7 +42,7 @@ fn main() -> ! {
     let mut data: [RGB8; MAX] = [(0, 0, 0).into(); MAX];
     let mut main = 0;
     let mut data_buff = [0u8; MAX * 3];
-    let mut ws = Ws2812::new(spi, Timing::new(16u32).unwrap(), &mut data_buff);
+    let mut ws = Ws2812::new(spi, Timing::new(4u32).unwrap(), &mut data_buff);
     let mut up = true;
     loop {
             for i in 0..MAX {
