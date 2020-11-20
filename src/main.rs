@@ -8,16 +8,16 @@ use ws2812_spi::prerendered::{Ws2812, Timing};
 use smart_leds::{SmartLedsWrite, RGB8};
 use arduino_uno::prelude::*;
 
-const MAX: usize = 8;
+const MAX: usize = 16;
 const COLOR1: RGB8 = RGB8 {
     r: 0x00,
     g: 0xc3 / 5,
     b: 0x36 / 5,
 };
 const COLOR2: RGB8 = RGB8 {
-    r: 0x00,
-    g: 0x24 / 5,
-    b: 0xb0 / 5,
+    r: 0x15,
+    g: 0x00,
+    b: 0x00,
 };
 #[arduino_uno::entry]
 fn main() -> ! {
