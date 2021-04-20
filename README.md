@@ -6,3 +6,9 @@
 
 ## status
 it worked once, accidentally, when I unplugged the cable for a split second - it all turned red and stayed like that. unable to reproduce though.
+
+## how I connected it
+![Screenshot](connections-pictures/IMG_20201120_235710.jpg)
+![Screenshot](connections-pictures/IMG_20201120_235735.jpg)
+![Screenshot](connections-pictures/IMG_20201120_235745.jpg)
+![Screenshot](connections-pictures/IMG_20201120_235758.jpg)
